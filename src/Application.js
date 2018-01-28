@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { Provider }         from 'react-redux';
-import { createStore }      from 'redux';
-import { View, Text }       from 'react-native';
-import reducers             from './reducers';
-import firebase             from 'firebase';
-import LoginForm            from './components/LoginForm';
+import React, { Component }    from 'react';
+import { Provider }            from 'react-redux';
+import { createStore }         from 'redux';
+import { View, Text }          from 'react-native';
+import reducers                from './reducers';
+import firebase                from 'firebase';
+import LoginForm               from './components/LoginForm';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 class Application extends Component {
   componentWillMount() {
@@ -21,8 +22,8 @@ class Application extends Component {
 
   render() {
     return (
-      <Provider store={createStore(reducers)}>
-        <View>
+      <Provider store={createStore(reducers, composeWithDevTools())}>
+        <View style={{ paddingTop: 65 }}>
           <LoginForm />
         </View>
       </Provider>
