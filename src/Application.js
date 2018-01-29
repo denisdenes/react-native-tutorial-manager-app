@@ -4,8 +4,8 @@ import thunk                            from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import reducers                         from './reducers';
 import firebase                         from 'firebase';
-import LoginForm                        from './components/LoginForm';
 import { composeWithDevTools }          from 'redux-devtools-extension';
+import Router                           from './Router';
 
 class Application extends Component {
   componentWillMount() {
@@ -25,7 +25,7 @@ class Application extends Component {
 
     return (
       <Provider store={store}>
-        <LoginForm />
+        <Router />
       </Provider>
     );
   }
