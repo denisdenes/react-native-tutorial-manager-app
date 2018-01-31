@@ -6,12 +6,6 @@ class EmployeeList extends Component {
     return (
       <View>
         <Text>Employee List</Text>
-        <Text>Employee List</Text>
-        <Text>Employee List</Text>
-        <Text>Employee List</Text>
-        <Text>Employee List</Text>
-        <Text>Employee List</Text>
-        <Text>Employee List</Text>
       </View>
     );
   }
