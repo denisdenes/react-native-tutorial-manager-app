@@ -64,7 +64,7 @@ const styles = {
     fontSize: 18,
     paddingLeft: 20
   }
-}
+};
 
 const mapStateToProps = (state) => {
   const { name, phone, shift } = state.employeeForm;
