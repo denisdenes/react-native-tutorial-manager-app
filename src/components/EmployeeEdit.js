@@ -1,12 +1,14 @@
-import React, { Component }              from 'react';
-import { CardSection, Card, Button }     from "./common";
-import EmployeeForm                      from './EmployeeForm';
-import { connect }                       from 'react-redux';
-import { employeeUpdate, employeesSave } from "../actions";
-import _                                 from 'lodash';
-import Communications                    from 'react-native-communications'
+import React, { Component }                   from 'react';
+import { CardSection, Card, Button, Confirm } from "./common";
+import EmployeeForm                           from './EmployeeForm';
+import { connect }                            from 'react-redux';
+import { employeeUpdate, employeesSave }      from "../actions";
+import _                                      from 'lodash';
+import Communications                         from 'react-native-communications'
 
 class EmployeeEdit extends Component {
+  state = { showModal: false };
+
   componentWillMount() {
     // iterate over every property of that object, and
     // update the reducer with every property
@@ -40,6 +42,16 @@ class EmployeeEdit extends Component {
             Text Schedule
           </Button>
         </CardSection>
+
+        <CardSection>
+          <Button onPress={() => this.setState({showModal: !this.state.showModal})}>
+            Fire Employee
+          </Button>
+        </CardSection>
+
+        <Confirm visible={this.state.showModal}>
+          Are you sure you want to delete this?
+        </Confirm>
       </Card>
     );
   }
